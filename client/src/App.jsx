@@ -6,7 +6,7 @@ import PlayerTable from './PlayerTable/PlayerTable';
 import CreatePlayer from './PlayerTable/CreatePlayer';
 import { makeStyles } from '@material-ui/core';
 import { useContext } from 'react';
-import { ModalContext } from './Context/modalContext';
+import { AppContext } from './Context/AppContext';
 import { useSelector } from 'react-redux';
 import ModifyPlayer from './PlayerTable/ModifyPlayer';
 
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const App = () => {
-  const { open, setOpen } = useContext(ModalContext);
+  const { open, setOpen } = useContext(AppContext);
   const classes = useStyles();
 
   const editPlayer = useSelector((state) => state.players[state.editPlayer]);

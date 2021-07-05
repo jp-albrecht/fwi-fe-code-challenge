@@ -81,6 +81,10 @@ $header-height: 2.5rem;
       transform: scale(0.9);
     }
   }
+
+  &__icon {
+    cursor: pointer;
+  }
 }
 
 .country {

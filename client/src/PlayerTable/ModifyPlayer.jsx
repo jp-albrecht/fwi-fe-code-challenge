@@ -5,10 +5,10 @@ import { modifyPlayerSuccess } from '../appState/actions';
 
 import './CreatePlayer.scss';
 import { COUNTRIES } from '../constants';
-import { ModalContext } from '../Context/modalContext';
+import { AppContext } from '../Context/AppContext';
 
 const ModifyPlayer = ({ player }) => {
-  const { setOpen } = useContext(ModalContext);
+  const { setOpen } = useContext(AppContext);
   const [name, setName] = useState(player.name);
   const [winnings, setWinnings] = useState(
     player.winnings.toLocaleString(undefined)

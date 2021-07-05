@@ -4,10 +4,10 @@ import './Header.scss';
 import { ReactComponent as CloudColor } from './cloud-color.svg';
 import { ReactComponent as CloudEffects } from './cloud-effects.svg';
 import { useContext } from 'react';
-import { ModalContext } from '../Context/modalContext';
+import { AppContext } from '../Context/AppContext';
 
 const Header = () => {
-  const { open, setOpen } = useContext(ModalContext);
+  const { setOpen } = useContext(AppContext);
 
   return (
     <header id="main-header" className="header">

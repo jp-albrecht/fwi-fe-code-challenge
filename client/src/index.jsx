@@ -6,7 +6,7 @@ import './index.scss';
 import App from './App';
 import rootReducer from './appState/index';
 import * as serviceWorker from './serviceWorker';
-import { ModalProvider } from './Context/modalContext';
+import { AppProvider } from './Context/AppContext';
 
 const store = createStore(
   rootReducer,
@@ -17,9 +17,9 @@ const store = createStore(
 ReactDOM.render(
   <StrictMode>
     <Provider store={store}>
-      <ModalProvider>
+      <AppProvider>
         <App />
-      </ModalProvider>
+      </AppProvider>
     </Provider>
   </StrictMode>,
   document.getElementById('root')
