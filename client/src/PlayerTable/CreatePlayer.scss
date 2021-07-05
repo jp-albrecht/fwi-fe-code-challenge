@@ -1,0 +1,9 @@
+.player-modal {
+  > * {
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    padding: 0.5em 0.85em;
+  }
+}
