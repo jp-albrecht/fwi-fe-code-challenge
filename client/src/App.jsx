@@ -7,6 +7,8 @@ import CreatePlayer from './PlayerTable/CreatePlayer';
 import { makeStyles } from '@material-ui/core';
 import { useContext } from 'react';
 import { ModalContext } from './Context/modalContext';
+import { useSelector } from 'react-redux';
+import ModifyPlayer from './PlayerTable/ModifyPlayer';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -23,6 +25,8 @@ const App = () => {
   const { open, setOpen } = useContext(ModalContext);
   const classes = useStyles();
 
+  const editPlayer = useSelector((state) => state.players[state.editPlayer]);
+
   return (
     <>
       <Header />
@@ -36,7 +40,7 @@ const App = () => {
             transform: `translate(-50%, -50%)`,
           }}
         >
-          <CreatePlayer />
+          {editPlayer ? <ModifyPlayer player={editPlayer} /> : <CreatePlayer />}
         </div>
       </Modal>
     </>

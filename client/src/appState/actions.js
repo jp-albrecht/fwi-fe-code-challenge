@@ -2,6 +2,8 @@ import {
   FETCH_PLAYERS_SUCCESS,
   DELETE_PLAYER_SUCCESS,
   CREATE_PLAYER_SUCCESS,
+  MODIFY_PLAYER_SUCCESS,
+  ADD_EDIT_PLAYER,
 } from './constants';
 
 export function fetchPlayersSuccess(data) {
@@ -14,4 +16,12 @@ export function deletePlayerSuccess(id) {
 
 export function createPlayerSuccess(player) {
   return { type: CREATE_PLAYER_SUCCESS, payload: { player } };
+}
+
+export function modifyPlayerSuccess(player) {
+  return { type: MODIFY_PLAYER_SUCCESS, payload: { player } };
+}
+
+export function addEditPlayer(id) {
+  return { type: ADD_EDIT_PLAYER, payload: { id } };
 }

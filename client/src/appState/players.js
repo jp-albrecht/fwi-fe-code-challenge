@@ -2,6 +2,7 @@ import {
   FETCH_PLAYERS_SUCCESS,
   DELETE_PLAYER_SUCCESS,
   CREATE_PLAYER_SUCCESS,
+  MODIFY_PLAYER_SUCCESS,
 } from './constants';
 
 function mergePlayers(state, { players }) {
@@ -18,7 +19,7 @@ function deletePlayer(state, id) {
   return newState;
 }
 
-function addPlayer(state, player) {
+function updatePlayers(state, player) {
   return {
     ...state,
     [player.id]: player,
@@ -32,7 +33,8 @@ export default function players(state = {}, action) {
     case DELETE_PLAYER_SUCCESS:
       return deletePlayer(state, action.payload.id);
     case CREATE_PLAYER_SUCCESS:
-      return addPlayer(state, action.payload.player);
+    case MODIFY_PLAYER_SUCCESS:
+      return updatePlayers(state, action.payload.player);
     default:
       return state;
   }

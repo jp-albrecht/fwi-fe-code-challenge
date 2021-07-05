@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Flags from 'react-world-flags';
+import { ModalContext } from '../Context/modalContext';
 
 import Avatar from '../Avatar';
 import { COUNTRIES } from '../constants';
+import { useDispatch } from 'react-redux';
+import { addEditPlayer } from '../appState/actions';
 
 const TableBody = ({ players, deletePlayer }) => {
+  const { setOpen } = useContext(ModalContext);
+  const dispatch = useDispatch();
+
   return (
     <table
       id="player-table-body"
@@ -34,6 +40,17 @@ const TableBody = ({ players, deletePlayer }) => {
                 </Avatar>
                 {country}
               </div>
+            </td>
+            <td role="gridcell" className="table__edit">
+              <button
+                className="table__button"
+                onClick={() => {
+                  dispatch(addEditPlayer(id));
+                  setOpen(true);
+                }}
+              >
+                ✏️
+              </button>
             </td>
             <td role="gridcell" className="table__delete">
               <button

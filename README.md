@@ -132,7 +132,7 @@ added any additional steps.
 ### Challenge Checklist
 
 - [x] Create Player
-- [ ] Modify Player
+- [x] Modify Player
 - [x] Delete Player
 - [ ] Implement sorting (optional)
 - [ ] Lazy loading/pagination (optional)

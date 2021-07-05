@@ -16,7 +16,7 @@ const Header = () => {
         <CloudEffects className="logo__effects" />
       </div>
       <h1 className="header__title">FWI Poker Challenge</h1>
-      <button className="btn" onClick={() => setOpen(!open)}>
+      <button className="btn" onClick={() => setOpen(true)}>
         Add Player
       </button>
     </header>
